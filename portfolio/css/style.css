@@ -516,7 +516,7 @@ svg {
 
 .contacts__container {
   aspect-ratio: 1440 / 700;
-  background: url("../assets/img/contacts/contacts.jpg") 0 0/cover no-repeat;
+  background: url("../assets/img/contact/contact.jpg") 0 0/cover no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
