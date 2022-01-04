@@ -138,7 +138,12 @@ svg {
 
 	&__item {}
 
-	&__link {}
+	&__link {
+
+		&:hover {
+			color: var(--gold);
+		}
+	}
 }
 
 .lang {
@@ -147,9 +152,19 @@ svg {
 		justify-content: space-between;
 	}
 
-	&__en {}
+	&__en {
 
-	&__ru {}
+		&:hover {
+			color: var(--gold);
+		}
+	}
+
+	&__ru {
+
+		&:hover {
+			color: var(--gold);
+		}
+	}
 }
 
 // header
@@ -447,7 +462,7 @@ svg {
 .contacts {
 	&__container {
 		aspect-ratio: 1440 / 700;
-		background: url('/portfolio/assets/img/contacts/contacts.jpg') 0 0 / cover no-repeat;
+		background: url('../assets/img/contacts/contacts.jpg') 0 0 / cover no-repeat;
 		display: flex;
 		flex-direction: column;
 		align-items: end;

@@ -236,6 +236,10 @@ svg {
           justify-content: space-evenly;
 }
 
+.header-nav__link:hover {
+  color: var(--gold);
+}
+
 .lang__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -243,6 +247,14 @@ svg {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.lang__en:hover {
+  color: var(--gold);
+}
+
+.lang__ru:hover {
+  color: var(--gold);
 }
 
 .hero {
@@ -504,7 +516,7 @@ svg {
 
 .contacts__container {
   aspect-ratio: 1440 / 700;
-  background: url("/portfolio/assets/img/contacts/contacts.jpg") 0 0/cover no-repeat;
+  background: url("../assets/img/contacts/contacts.jpg") 0 0/cover no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
