@@ -20,8 +20,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function switchTime(btn) {
 		document.querySelectorAll('.portfolio__img').forEach((item, index) => {
+			item.classList.remove('_fade');
 			const time = btn.getAttribute('data-time');
 			item.setAttribute('src', `assets/img/portfolio/${time}/${index}.jpg`);
+			item.classList.add('_fade');
+			setTimeout(() => {
+				item.classList.remove('_fade');
+			}, 300);
 		});
 	}
 

@@ -452,6 +452,7 @@ span {
 		max-width: 1440px;
 		max-height: 910px;
 		margin: 0 -20px;
+		transition: box-shadow 0.5s ease-in-out 0s;
 	}
 
 	&__column {
@@ -527,7 +528,7 @@ span {
 
 		& .hero__wallpaper {
 			background: url('../assets/img/hero/white-wallpaper.jpg') 0 0 / cover no-repeat;
-			box-shadow: 10px 0 60px 0 white inset, -10px 0 60px 0 white inset;
+			box-shadow: 10px 0 15px 0 white inset, -10px 0 15px 0 white inset;
 		}
 
 		& .hero__btn {
@@ -536,6 +537,17 @@ span {
 			&:hover {
 				background: var(--matte-black);
 				color: var(--gold);
+			}
+		}
+
+		& .bubbly-btn {
+
+			&::before {
+				background-image: radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--matte-black) 20%, transparent 30%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--matte-black) 15%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%);
+			}
+
+			&::after {
+				background-image: radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--matte-black) 15%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%);
 			}
 		}
 	}
@@ -708,14 +720,36 @@ span {
 		&:hover {
 			color: var(--white);
 		}
+
+		&:hover,
+		&:focus {
+			box-shadow: 0 0.5em 0.5em -0.4em var(--gold);
+			transform: translatey(-0.5em);
+		}
 	}
 
 	& ._active {
 		background: var(--gold);
 		color: var(--bg-dark);
+		box-shadow: 0 0.5em 0.5em -0.4em var(--gold);
+		transform: translatey(-0.5em);
 
 		&:hover {
 			color: var(--white);
+		}
+	}
+
+	._fade {
+		animation: opac 0.3s ease-in-out 1;
+
+		@keyframes opac {
+			0% {
+				transform: scale(0.95);
+			}
+
+			100% {
+				transform: scale(1);
+			}
 		}
 	}
 
@@ -736,7 +770,9 @@ span {
 			transform: scale(1.05);
 		}
 
-		&_1 {}
+		&_1 {
+			animation-delay: 1s;
+		}
 	}
 
 	@media (max-width: 1024px) {
@@ -905,6 +941,8 @@ span {
 
 		& .cards__btn {
 			background: var(--gold);
+			position: relative;
+			z-index: 1;
 
 			&:hover {
 				color: var(--gold);
@@ -970,9 +1008,38 @@ span {
 		line-height: 40px;
 		letter-spacing: 0em;
 		text-align: center;
+		position: relative;
+		overflow: hidden;
 
 		&:hover {
 			color: var(--white);
+		}
+
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(255, 255, 255, 0.75);
+			border: 1px solid var(--white);
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+			animation: animate 0.5s ease-in-out 1;
+			z-index: 2;
+
+			@keyframes animate {
+
+				0% {
+					width: 0px;
+					height: 0px;
+				}
+
+				100% {
+					width: 440px;
+					height: 440px;
+					opacity: 0;
+				}
+			}
 		}
 	}
 
@@ -1065,6 +1132,17 @@ span {
 			&:hover {
 				color: var(--gold);
 				background: var(--matte-black);
+			}
+		}
+
+		& .bubbly-btn {
+
+			&::before {
+				background-image: radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--matte-black) 20%, transparent 30%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--matte-black) 15%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%);
+			}
+
+			&::after {
+				background-image: radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--matte-black) 15%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%), radial-gradient(circle, var(--matte-black) 20%, transparent 20%);
 			}
 		}
 	}
@@ -1223,3 +1301,94 @@ span {
 }
 
 //footer
+
+
+.bubbly-btn {
+	transition: transform ease-in 0.1s, box-shadow ease-in 0.25s, color 0.5s ease-in-out 0s, background 0.5s ease-in-out 0s, fill 0.5s ease-in-out 0s, transform 0.5s ease-in-out 0s;
+	box-shadow: 0 2px 15px var(--gold);
+	transform: scale(1);
+
+
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		display: block;
+		width: 140%;
+		height: 100%;
+		left: -20%;
+		z-index: -1000;
+		transition: all ease-in-out 0.5s;
+		background-repeat: no-repeat;
+	}
+
+	&:focus {
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	&::before {
+		display: none;
+		top: -75%;
+		background-image: radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--gold) 20%, transparent 30%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--gold) 15%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%);
+		background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+	}
+
+	&::after {
+		display: none;
+		bottom: -75%;
+		background-image: radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--gold) 15%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%), radial-gradient(circle, var(--gold) 20%, transparent 20%);
+		background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+	}
+
+	&:active {
+		transform: scale(0.9);
+		background-color: var(--gold);
+		box-shadow: 0 2px 25px rgba(189, 174, 130, 0.2);
+	}
+
+
+}
+
+._bubbly {
+	&::before {
+		display: block;
+		animation: topBubbles ease-in-out 0.75s forwards;
+	}
+
+	&::after {
+		display: block;
+		animation: bottomBubbles ease-in-out 0.75s forwards;
+	}
+}
+
+@keyframes topBubbles {
+	0% {
+		background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+	}
+
+	50% {
+		background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+	}
+
+	100% {
+		background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}
+
+@keyframes bottomBubbles {
+	0% {
+		background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+	}
+
+	50% {
+		background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+	}
+
+	100% {
+		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}

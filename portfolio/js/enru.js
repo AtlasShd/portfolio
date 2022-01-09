@@ -9,7 +9,6 @@ window.addEventListener('load', function () {
 		currentLang = this.localStorage.getItem('lang');
 		switchLang(document.querySelector(`.lang__${currentLang}`));
 	}
-	console.log(currentLang);
 });
 
 window.addEventListener('beforeunload', function () {
