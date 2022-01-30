@@ -827,6 +827,19 @@ span {
   color: var(--white);
 }
 
+.portfolio ._activv {
+  background: var(--gold);
+  color: var(--bg-dark);
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--gold);
+          box-shadow: 0 0.5em 0.5em -0.4em var(--gold);
+  -webkit-transform: translatey(-0.5em);
+          transform: translatey(-0.5em);
+}
+
+.portfolio ._activv:hover {
+  color: var(--white);
+}
+
 .portfolio ._fade {
   -webkit-animation: opac 0.3s ease-in-out 1;
           animation: opac 0.3s ease-in-out 1;
@@ -899,6 +912,18 @@ span {
     -ms-grid-columns: (minmax(200px, 450px))[1];
         grid-template-columns: repeat(1, minmax(200px, 450px));
   }
+  .portfolio__btn:nth-child(3n):hover, .portfolio__btn:nth-child(3n):focus, .portfolio__btn:nth-child(4n):hover, .portfolio__btn:nth-child(4n):focus {
+    -webkit-box-shadow: 0 -0.5em 0.5em -0.4em var(--gold);
+            box-shadow: 0 -0.5em 0.5em -0.4em var(--gold);
+    -webkit-transform: translatey(0.5em);
+            transform: translatey(0.5em);
+  }
+  .portfolio ._activv {
+    -webkit-box-shadow: 0 -0.5em 0.5em -0.4em var(--gold);
+            box-shadow: 0 -0.5em 0.5em -0.4em var(--gold);
+    -webkit-transform: translatey(0.5em);
+            transform: translatey(0.5em);
+  }
 }
 
 .portfolio__white-theme {
@@ -931,6 +956,15 @@ span {
 }
 
 .portfolio__white-theme ._active:hover {
+  color: var(--gold);
+}
+
+.portfolio__white-theme ._activv {
+  background: var(--matte-black);
+  color: var(--gold);
+}
+
+.portfolio__white-theme ._activv:hover {
   color: var(--gold);
 }
 

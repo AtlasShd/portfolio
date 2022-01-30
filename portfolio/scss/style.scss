@@ -739,6 +739,17 @@ span {
 		}
 	}
 
+	& ._activv {
+		background: var(--gold);
+		color: var(--bg-dark);
+		box-shadow: 0 0.5em 0.5em -0.4em var(--gold);
+		transform: translatey(-0.5em);
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
 	._fade {
 		animation: opac 0.3s ease-in-out 1;
 
@@ -793,6 +804,24 @@ span {
 			padding: 0 20px;
 			grid-template-columns: repeat(1, minmax(200px, 450px));
 		}
+
+		&__btn {
+
+			&:nth-child(3n),
+			&:nth-child(4n) {
+
+				&:hover,
+				&:focus {
+					box-shadow: 0 -0.5em 0.5em -0.4em var(--gold);
+					transform: translatey(0.5em);
+				}
+			}
+		}
+
+		& ._activv {
+			box-shadow: 0 -0.5em 0.5em -0.4em var(--gold);
+			transform: translatey(0.5em);
+		}
 	}
 
 	&__white-theme {
@@ -821,6 +850,15 @@ span {
 		}
 
 		& ._active {
+			background: var(--matte-black);
+			color: var(--gold);
+
+			&:hover {
+				color: var(--gold);
+			}
+		}
+
+		& ._activv {
 			background: var(--matte-black);
 			color: var(--gold);
 

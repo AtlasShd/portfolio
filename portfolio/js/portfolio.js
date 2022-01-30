@@ -7,7 +7,11 @@ window.addEventListener('DOMContentLoaded', function () {
 		btn.addEventListener('click', function (e) {
 			currentTime = index;
 			clearAllCheck();
-			e.target.classList.add('_active');
+			if (e.target.getAttribute('data-time') == 'summer' || e.target.getAttribute('data-time') == 'autumn') {
+				e.target.classList.add('_activv');
+			} else {
+				e.target.classList.add('_active');
+			}
 			switchTime(btn);
 		});
 	});
@@ -15,6 +19,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	function clearAllCheck() {
 		document.querySelectorAll('.portfolio__btn').forEach((item) => {
 			item.classList.remove('_active');
+			item.classList.remove('_activv');
 		});
 	}
 
