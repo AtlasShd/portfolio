@@ -607,6 +607,15 @@ span {
     padding-top: 20px;
     line-height: 24px;
   }
+}
+
+@media (max-width: 1024px) and (max-width: 486px) {
+  .hero__text {
+    padding-right: 8.4%;
+  }
+}
+
+@media (max-width: 1024px) {
   .hero__btn {
     margin-bottom: 100px;
   }
@@ -621,6 +630,12 @@ span {
   background: url("../assets/img/hero/white-wallpaper.jpg") 0 0/cover no-repeat;
   -webkit-box-shadow: 10px 0 15px 0 white inset, -10px 0 15px 0 white inset;
           box-shadow: 10px 0 15px 0 white inset, -10px 0 15px 0 white inset;
+}
+
+@media (max-width: 767px) {
+  .hero__white-theme .hero__wallpaper {
+    background: url("../assets/img/hero/white-wallpaper.jpg") 50% 50%/cover no-repeat;
+  }
 }
 
 .hero__white-theme .hero__btn {
@@ -1266,6 +1281,12 @@ span {
 
 .contacts__white-theme .contacts__container {
   background: url("../assets/img/contact/white-contact.jpg") 48% 13% no-repeat;
+}
+
+@media (max-width: 767px) {
+  .contacts__white-theme .contacts__container {
+    background: url("../assets/img/contact/white-contact.jpg") 26% 13%/cover no-repeat;
+  }
 }
 
 .contacts__white-theme .contacts-form input,
